@@ -35,4 +35,3 @@ export interface CartStore {
     getCartSize: () => number;
     setItems: (items: CartItem[]) => void;
 }
-//# sourceMappingURL=cart.api.d.ts.map

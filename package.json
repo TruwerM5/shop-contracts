@@ -1,23 +1,25 @@
 {
   "name": "@shop/contracts",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsc",
-    "prepare": "npm run build"
-  },
+
+  "types": "./dist/index.d.ts",
+
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist"],
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
+
+  "files": [
+    "dist"
+  ],
+
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "dev": "tsc --watch"
+  },
+
   "devDependencies": {
     "typescript": "^7.0.2"
   }
