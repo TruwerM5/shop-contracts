@@ -17,3 +17,17 @@ export interface UserWithPasswordResponse extends UserResponse {
 export interface AuthenticatedUserResponse extends UserResponse {
     access_token: string;
 }
+
+export interface LoginRequest {
+    email: string;
+    password: string;
+}
+
+export interface SignupRequest extends LoginRequest {
+    name: string;
+    confirmPassword: string;
+}
+
+export interface LogoutRequest {
+    success: boolean;
+}
