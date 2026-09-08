@@ -7,6 +7,10 @@ export interface UserResponse {
     status: UserStatus;
     role: UserRole;
 }
+export interface UserAndJwtExpirationResponse extends UserResponse {
+    iat: number;
+    exp: number;
+}
 export interface UserWithPasswordResponse extends UserResponse {
     password: string;
 }
