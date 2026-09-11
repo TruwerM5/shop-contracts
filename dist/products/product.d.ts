@@ -22,3 +22,9 @@ export interface ProductDetailsResponse {
     author: string | null;
     description?: string;
 }
+export interface ProductInCartResponse {
+    productId: number;
+    name: string;
+    price: number;
+    productImages: ProductImagesResponse[];
+}

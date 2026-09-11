@@ -1,16 +1,16 @@
-export interface Cart {
-    cartId: number;
+import { ProductInCartResponse } from "../products/product";
+export interface CartResponse {
     token: string;
-    userId: number | null;
-    createdAt: Date;
-    updatedAt: Date;
-    expiresAt: Date | null;
-}
-export interface CartItem {
     cartId: number;
+    userId?: number | null;
+    createdAt: Date;
+    expiresAt: Date | null;
+    items: CartItemResponse[];
+}
+export interface CartItemResponse {
     cartItemId: number;
-    productId: number;
     quantity: number;
+    product: ProductInCartResponse;
 }
 export interface ApiGetCart {
     cartId: number;
@@ -28,10 +28,4 @@ export interface GetProductInCartDto {
     productImages: {
         imagePath: string;
     }[];
-}
-export interface CartStore {
-    items: CartItem[];
-    fetchCart: () => Promise<void>;
-    getCartSize: () => number;
-    setItems: (items: CartItem[]) => void;
 }
