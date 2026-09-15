@@ -1,12 +1,13 @@
 import { ProductInCartResponse } from "../products/product";
-export interface CartResponse {
-    token: string;
+export type CartResponse = {
     cartId: number;
-    userId?: number | null;
-    createdAt: Date;
+    userId?: number;
+    createdAt: Date | null;
     expiresAt: Date | null;
     items: CartItemResponse[];
-}
+} | {
+    items: null;
+};
 export interface CartItemResponse {
     cartItemId: number;
     quantity: number;
