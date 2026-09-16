@@ -1,17 +1,29 @@
 import { ProductInCartResponse } from "../products/product";
-export type CartResponse = {
+interface BaseCart {
     cartId: number;
-    userId?: number;
+    userId: number | null;
     createdAt: Date | null;
     expiresAt: Date | null;
     items: CartItemResponse[];
-} | {
+}
+export type GetCartResponse = BaseCart | {
     items: null;
 };
 export interface CartItemResponse {
     cartItemId: number;
     quantity: number;
     product: ProductInCartResponse;
+}
+type AddToCartOmitItemsResponse = Omit<BaseCart, 'items'>;
+export interface AddToCartResponse {
+    cart: AddToCartOmitItemsResponse;
+    cartItem: CartItemResponse;
+}
+export interface AddToCartItemResponse {
+    cartId: number;
+    cartItemId: number;
+    productId: number;
+    quantity: number;
 }
 export interface ApiGetCart {
     cartId: number;
@@ -30,3 +42,4 @@ export interface GetProductInCartDto {
         imagePath: string;
     }[];
 }
+export {};
