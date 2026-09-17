@@ -9,6 +9,7 @@ interface BaseCart {
 }
 
 export type GetCartResponse = BaseCart | {
+    cartId: null;
     items: null;
 }
 

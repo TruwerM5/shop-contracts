@@ -7,6 +7,7 @@ interface BaseCart {
     items: CartItemResponse[];
 }
 export type GetCartResponse = BaseCart | {
+    cartId: null;
     items: null;
 };
 export interface CartItemResponse {
