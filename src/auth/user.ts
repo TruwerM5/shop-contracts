@@ -21,6 +21,7 @@ export interface UserWithPasswordResponse extends UserResponse {
 
 export interface AuthenticatedUserResponse extends UserResponse {
     access_token: string;
+    newCartToken?: string;
 }
 
 export interface LoginRequest {
