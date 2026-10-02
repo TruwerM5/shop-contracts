@@ -8,7 +8,6 @@
     "outDir": "./dist",
 
     "declaration": true,
-    "emitDeclarationOnly": true,
 
     "strict": true,
     "skipLibCheck": true

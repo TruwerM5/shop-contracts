@@ -11,7 +11,8 @@ export interface ProductImagesResponse {
     productId: number;
     imagePath: string;
 }
-export type ProductCategory = "gadgets" | "books" | "clothes";
+export declare const PRODUCT_CATEGORIES: readonly ['books', 'gadgets', 'clothes'];
+export type ProductCategory = typeof PRODUCT_CATEGORIES[number];
 export interface FullProductItem extends ProductResponse {
     productDetails: ProductDetailsResponse;
 }
