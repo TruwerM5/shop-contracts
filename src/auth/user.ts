@@ -22,6 +22,12 @@ export interface GitHubUserResponse {
   avatar_url: string;
 }
 
+export interface YandexUserResponse {
+  id: string;
+  emails: string[];
+  first_name: string;
+}
+
 export interface UserAndJwtExpirationResponse extends UserResponse {
   iat: number;
   exp: number;
